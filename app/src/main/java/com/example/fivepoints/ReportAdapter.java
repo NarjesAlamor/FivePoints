@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import androidx.core.content.ContextCompat;
+
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -40,21 +42,22 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ViewHolder
         // تغيير لون الحالة حسب النوع
         switch (report.getStatus()) {
             case "قيد الانتظار":
-                holder.tvStatus.setTextColor(holder.itemView.getContext().getResources()
-                        .getColor(android.R.color.holo_orange_dark));
+                holder.tvStatus.setTextColor(
+                        ContextCompat.getColor(holder.itemView.getContext(), android.R.color.holo_orange_dark));
                 break;
             case "قيد المعالجة":
-                holder.tvStatus.setTextColor(holder.itemView.getContext().getResources()
-                        .getColor(android.R.color.holo_blue_dark));
+                holder.tvStatus.setTextColor(
+                        ContextCompat.getColor(holder.itemView.getContext(), android.R.color.holo_blue_dark));
                 break;
             case "تم الحل":
-                holder.tvStatus.setTextColor(holder.itemView.getContext().getResources()
-                        .getColor(android.R.color.holo_green_dark));
+                holder.tvStatus.setTextColor(
+                        ContextCompat.getColor(holder.itemView.getContext(), android.R.color.holo_green_dark));
                 break;
             default:
-                holder.tvStatus.setTextColor(holder.itemView.getContext().getResources()
-                        .getColor(android.R.color.darker_gray));
+                holder.tvStatus.setTextColor(
+                        ContextCompat.getColor(holder.itemView.getContext(), android.R.color.darker_gray));
         }
+
     }
 
     @Override
